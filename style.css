@@ -1,0 +1,74 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: cornsilk;
+    color: brown;
+}
+
+header {
+    background: aqua;
+    color: aliceblue;
+    text-align: center;
+    padding: 20px;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+}
+
+.circulo-slider {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #0ed8ce;
+}
+
+.circulo-slider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    animation: sliderAnimado 9s infinite;
+    opacity: 0;
+}
+
+.circulo-slider img:nth-child(1) {
+    animation-delay: 0s;
+}
+.circulo-slider img:nth-child(2) {
+    animation-delay: 3s;
+}
+.circulo-slider img:nth-child(3) {
+    animation-delay: 6s;
+}
+
+@keyframes sliderAnimado {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+footer {
+    background-color: black;
+    color: chartreuse;
+    text-align: center;
+    padding: 20px;
+    margin: 40px;
+}
+
+@media (max-width: 768px) {
+    .galeria {
+        flex-direction: column;
+        align-items: center;
+    }
+}
